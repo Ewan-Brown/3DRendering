@@ -19,7 +19,7 @@ public class Polygon2D {
 			double zP  = p.getY();
 			double y = h / 2;
 			y -= zP * (h / 2);
-			p1.addPoint((int)x, (int)(h - y));
+			p1.addPoint((int)(w - x), (int)(h - y));
 		}
 		return p1;
 	}

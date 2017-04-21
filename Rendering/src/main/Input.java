@@ -14,23 +14,24 @@ public class Input implements KeyListener,MouseListener,Runnable{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			if(keys[KeyEvent.VK_A]){
+//			double 
+			if(keys[KeyEvent.VK_S]){
 				Main.renderer.povX -= 0.03;
 			}
-			if(keys[KeyEvent.VK_D]){
+			if(keys[KeyEvent.VK_W]){
 				Main.renderer.povX += 0.03;
 			}
-			if(keys[KeyEvent.VK_W]){
+			if(keys[KeyEvent.VK_A]){
 				Main.renderer.povY -= 0.03;
 			}
-			if(keys[KeyEvent.VK_S]){
+			if(keys[KeyEvent.VK_D]){
 				Main.renderer.povY += 0.03;
 			}
 			if(keys[KeyEvent.VK_Q]){
-				Main.renderer.povZ -= 0.03;
+				Main.renderer.povZ -= 0.01;
 			}
 			if(keys[KeyEvent.VK_E]){
-				Main.renderer.povZ += 0.03;
+				Main.renderer.povZ += 0.01;
 			}
 			if(keys[KeyEvent.VK_UP]){
 				Main.renderer.povAngleZX += 0.2;

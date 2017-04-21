@@ -15,7 +15,7 @@ public class Renderer implements Runnable{
 	double povZ = 10;
 	double povAngleXY = 0;
 	double povAngleZX = 0;
-	double FOV = 30;
+	double FOV = 45;
 //	public double targetX = 15;
 //	public double targetY = 15;
 //	public double targetZ = 15;
