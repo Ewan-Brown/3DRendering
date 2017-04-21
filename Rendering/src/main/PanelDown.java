@@ -27,13 +27,23 @@ public class PanelDown extends JPanel implements Runnable{
 		double w = getWidth();
 		double h = getHeight();
 		g.setColor(Color.RED);
-		g.fillRect((int)(Main.renderer.povX * 10),(int)(Main.renderer.povY * 10), 5, 5);
+		double x = Main.renderer.povX * 10;
+		double y = Main.renderer.povY * 10;
+		g.fillRect((int)(x),(int)(y), 5, 5);
+
+		double turnx = Math.cos(Math.toRadians(Main.renderer.povAngleXY)); 
+		double turny = Math.sin(Math.toRadians(Main.renderer.povAngleXY));
+		int s = 10 *15;
+		turnx *= s;
+		turny *= s;
 		for(int i = 0; i < Main.renderer.rawPolygons.size();i++){
 			Polygon3D p3 = Main.renderer.rawPolygons.get(i);
 			for(int j = 0 ; j < p3.sides.size();j++){
 				for(int k = 0; k < p3.sides.get(j).points.size();k++){
 					Point3D p = p3.sides.get(j).points.get(k);
 					g.fillRect((int)(p.x * 10),(int)(p.y * 10), 5, 5);
+					g.drawLine((int)(x),(int)(y), (int)(turnx+x), (int)(turny+y));
+
 				}
 			}
 		}	}

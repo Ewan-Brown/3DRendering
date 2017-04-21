@@ -34,17 +34,23 @@ public class Input implements KeyListener,MouseListener,Runnable{
 				Main.renderer.povZ += 0.01;
 			}
 			if(keys[KeyEvent.VK_UP]){
-				Main.renderer.povAngleZX += 0.2;
+				Main.renderer.povAngleZX += 0.8;
 			}	
 			if(keys[KeyEvent.VK_DOWN]){
-				Main.renderer.povAngleZX -= 0.2;
+				Main.renderer.povAngleZX -= 0.8;
 			}		
-//			if(keys[KeyEvent.VK_LEFT]){
-//				Main.renderer.povZ += 0.03;
-//			}
-//			if(keys[KeyEvent.VK_RIGHT]){
-//				Main.renderer.povZ += 0.03;
-//			}
+			if(keys[KeyEvent.VK_LEFT]){
+				Main.renderer.povAngleXY -= 0.8;
+			}
+			if(keys[KeyEvent.VK_RIGHT]){
+				Main.renderer.povAngleXY += 0.8;
+			}
+			if(keys[KeyEvent.VK_Y]){
+				Main.renderer.povAngleXY = 0;
+			}
+			if(keys[KeyEvent.VK_Z]){
+				Main.renderer.povAngleZX = 0;
+			}		
 		}
 		
 	}
