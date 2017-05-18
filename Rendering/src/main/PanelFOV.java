@@ -25,12 +25,14 @@ public class PanelFOV extends JPanel implements Runnable{
 		super.paint(g);
 		Graphics2D g2 = (Graphics2D) g;
 		g.clearRect(0, 0, getWidth(), getHeight());	
+
 		for(int i = 0; i < Main.renderer.renderedPolygons.size();i++){
 			Polygon p = Main.renderer.renderedPolygons.get(i).getPoly(getWidth(), getHeight());
 			for(int j = 0; j < p.npoints;j++){
-				g2.drawRect(p.xpoints[j], p.ypoints[j], 5, 5);
+//				g2.drawRect(p.xpoints[j], p.ypoints[j], 5, 5);
+				g2.drawRect(p.xpoints[j], getWidth() / 2, 5, 5);
 			}
-			g2.fillPolygon(Main.renderer.renderedPolygons.get(i).getPoly(getWidth(), getHeight()));
+//			g2.fillPolygon(Main.renderer.renderedPolygons.get(i).getPoly(getWidth(), getHeight()));
 		}
 	}
 }

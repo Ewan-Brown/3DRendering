@@ -2,6 +2,7 @@ package main;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.text.DecimalFormat;
 
 import javax.swing.JPanel;
 
@@ -11,7 +12,7 @@ import shapes.Polygon3D;
 public class PanelDown extends JPanel implements Runnable{
 
 	public PanelDown(){}
-
+	DecimalFormat df = new DecimalFormat("#.##");
 	public void run() {
 		while(true){
 			repaint();
@@ -30,7 +31,9 @@ public class PanelDown extends JPanel implements Runnable{
 		double x = Main.renderer.povX * 10;
 		double y = Main.renderer.povY * 10;
 		g.fillRect((int)(x),(int)(y), 5, 5);
-
+		g.drawString("angle1 " + df.format(Renderer.angle1), 10, 10);
+		g.drawString("angle2 " + df.format(Renderer.angle2), 10, 30);
+		g.drawString("angleFOV_XY " + df.format(Renderer.fovAngle), 10, 50);
 		double turnx = Math.cos(Math.toRadians(Main.renderer.povAngleXY)); 
 		double turny = Math.sin(Math.toRadians(Main.renderer.povAngleXY));
 		int s = 10 *15;
